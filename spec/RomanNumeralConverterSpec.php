@@ -76,4 +76,10 @@ class RomanNumeralConverterSpec extends ObjectBehavior
     function it_calculates_the_roman_numeral_for_4990() {
         $this->convert(4990)->shouldReturn('MMMMCMXC');
     }
+
+    function it_takes_exception_with_zero()
+	{
+		$this->shouldThrow('InvalidArgumentException')->duringConvert(0);
+	}
+
 }

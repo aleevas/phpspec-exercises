@@ -27,8 +27,11 @@ class RomanNumeralConverter
 	 */
     public function convert($number)
     {
+
+        $this->protectFromInvalidNumber($number);
+
         $roman = '';
-        
+
         foreach (static::$lookup as $limit=>$r_symbol) {
             
             while ($number >= $limit) {
@@ -39,4 +42,16 @@ class RomanNumeralConverter
 
        return $roman;
     }
+
+    /**
+	 * @param $number
+	 */
+	private function protectFromInvalidNumber($number)
+	{
+		if ($number <= 0)
+		{
+			throw new InvalidArgumentException;
+		}
+	}
+
 }
