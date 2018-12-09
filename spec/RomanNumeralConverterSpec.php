@@ -25,9 +25,9 @@ class RomanNumeralConverterSpec extends ObjectBehavior
         $this->convert(3)->shouldReturn('III');
     }
 
-    // function it_calculates_the_roman_numeral_for_4() {
-        // $this->convert(4)->shouldReturn('IV');
-    // }
+    function it_calculates_the_roman_numeral_for_4() {
+        $this->convert(4)->shouldReturn('IV');
+    }
 
     function it_calculates_the_roman_numeral_for_5() {
         $this->convert(5)->shouldReturn('V');
@@ -37,9 +37,9 @@ class RomanNumeralConverterSpec extends ObjectBehavior
         $this->convert(6)->shouldReturn('VI');
     }
 
-    // function it_calculates_the_roman_numeral_for_9() {
-    //     $this->convert(9)->shouldReturn('IX');
-    // }
+    function it_calculates_the_roman_numeral_for_9() {
+        $this->convert(9)->shouldReturn('IX');
+    }
 
     function it_calculates_the_roman_numeral_for_10() {
         $this->convert(10)->shouldReturn('X');

@@ -2,26 +2,26 @@
 
 class RomanNumeralConverter
 {
+    protected static $lookup = [
+        50 => 'L',
+        10 => 'X',
+        9 => 'IX',
+        5 => 'V',
+        4 => 'IV',
+        1 => 'I',
+    ];
+
     public function convert($number)
     {
         $roman = '';
-
-        while ($number >= 50) {
-            $roman .= 'L';
-            $number-= 50;
+        
+        foreach (static::$lookup as $limit=>$r_symbol) {
+            
+            while ($number >= $limit) {
+                $roman .= $r_symbol;
+                $number-= $limit;
+            }
         }
-
-        while ($number >= 10) {
-            $roman .= 'X';
-            $number-= 10;
-        }
-
-        if ($number >= 5) {
-            $roman .= 'V';
-            $number-= 5;
-        }
-
-        $roman .= str_repeat('I', $number);
 
        return $roman;
     }
